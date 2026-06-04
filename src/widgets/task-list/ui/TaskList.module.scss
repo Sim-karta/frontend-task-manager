@@ -1,0 +1,58 @@
+@use '../../../app/styles/variables' as *;
+@use '../../../app/styles/mixins' as *;
+
+.section {
+  display: grid;
+  gap: 16px;
+}
+
+.summary {
+  @include panel;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 6px 0 0;
+    color: $color-text-muted;
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.12);
+    color: $color-primary;
+    font-weight: 850;
+    white-space: nowrap;
+  }
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.empty {
+  @include panel;
+  margin: 0;
+  padding: 24px;
+  color: $color-text-muted;
+  text-align: center;
+}
+
+@include mobile {
+  .summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,12 @@
+@use '../../../app/styles/variables' as *;
+
+.button {
+  min-height: 38px;
+  padding: 0 14px;
+  background: rgba(220, 38, 38, 0.1);
+  color: $color-danger;
+
+  &:hover {
+    background: rgba(220, 38, 38, 0.16);
+  }
+}

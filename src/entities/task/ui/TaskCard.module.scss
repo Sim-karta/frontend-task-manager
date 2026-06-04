@@ -1,0 +1,112 @@
+@use '../../../app/styles/variables' as *;
+@use '../../../app/styles/mixins' as *;
+
+.card {
+  @include panel;
+  display: grid;
+  gap: 18px;
+  padding: 18px;
+}
+
+.content {
+  display: grid;
+  gap: 10px;
+
+  p {
+    margin: 0;
+    color: $color-text-muted;
+    line-height: 1.55;
+  }
+}
+
+.titleRow {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  h3 {
+    margin: 0;
+    font-size: 1.04rem;
+    line-height: 1.35;
+  }
+}
+
+.badge,
+.deadline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.todo {
+  background: rgba(107, 114, 128, 0.13);
+  color: $color-todo;
+}
+
+.progress {
+  background: rgba(217, 119, 6, 0.16);
+  color: $color-progress;
+}
+
+.done {
+  background: rgba(21, 128, 61, 0.14);
+  color: $color-done;
+}
+
+.footer {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+
+.deadline {
+  align-self: end;
+  background: $color-surface-muted;
+  color: $color-text;
+}
+
+.overdue {
+  background: rgba(220, 38, 38, 0.12);
+  color: $color-danger;
+}
+
+.today {
+  background: rgba(37, 99, 235, 0.13);
+  color: $color-primary;
+}
+
+.future {
+  background: rgba(21, 128, 61, 0.12);
+  color: $color-done;
+}
+
+@include mobile {
+  .titleRow,
+  .footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .badge,
+  .deadline {
+    width: fit-content;
+  }
+}
