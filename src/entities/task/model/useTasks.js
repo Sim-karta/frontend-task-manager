@@ -115,7 +115,7 @@ export function useTasks() {
 
     setTasks((currentTasks) =>
       currentTasks.map((currentTask) =>
-        currentTask.id === task.id ? task : currentTask,
+        currentTask.id === task.id ? { ...currentTask, ...task } : currentTask,
       ),
     )
   }, [])
